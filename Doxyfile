@@ -1,0 +1,78 @@
+# Doxyfile 1.9.5
+
+
+# ========================================= Variables =================================================
+# TODO: MAKE ENVIRONMENT VARIABLES FOR PROJECT NAME, DOXYGEN FILE PATH, DOXYGEN IMAGES FILE PATH
+
+# ====================================== Project Settings =============================================
+DOXYFILE_ENCODING       = UTF-8
+# TODO: REPLACE PROJECT_NAME WITH ENVIRONMENT VARIABLE
+PROJECT_NAME            = "C99+ Classes"
+PROJECT_BRIEF           = "Data Structures and Design Patterns for Embedded Targets running C99+"
+PROJECT_LOGO            = /doxygen/images/site_logo.png
+
+
+# ============================================ Paths =================================================
+# TODO: REPLACE PATHS WITH ENVIRONMENT VARIABLES
+IMAGE_PATH              = images/
+INPUT                   = 
+FILE_PATTERNS           = *.c
+                          *.h
+                          *.dox
+
+OUTPUT_DIRECTORY        = /doxygen/doxygen-output
+# =========================================== Outputs ================================================
+GENERATE_AUTOGEN_DEF    = NO
+GENERATE_BUGLIST        = NO
+GENERATE_CHI            = NO
+GENERATE_DEPRECATEDLIST = NO
+GENERATE_DOCBOOK        = NO
+GENERATE_DOCSET         = NO
+GENERATE_ECLIPSEHELP    = NO
+GENERATE_HTMLHELP       = NO
+GENERATE_LATEX          = NO
+GENERATE_LEGEND         = NO
+GENERATE_MAN            = NO
+GENERATE_PERLMOD        = NO
+GENERATE_QHP            = NO
+GENERATE_RTF            = NO
+GENERATE_SQLITE3        = NO
+# GENERATE_TAGFILE
+GENERATE_TESTLIST       = YES
+GENERATE_TODOLIST       = YES
+GENERATE_TREEVIEW       = NO
+GENERATE_XML            = NO
+
+
+# ======================================== Language Output Settings ====================================
+OUTPUT_LANGUAGE         = ENGLISH
+OPTIMIZE_FOR_FORTRAN    = NO
+OPTIMIZE_OUTPUT_FOR_C   = YES
+OPTIMIZE_OUTPUT_JAVA    = NO
+OPTIMIZE_OUTPUT_SLICE   = NO
+OPTIMIZE_OUTPUT_VHDL    = NO
+
+
+# ========================================= HTML Output Settings ========================================
+GENERATE_HTML           = YES
+HTML_OUTPUT             = ../html
+HTML_FILE_EXTENSION     = .html
+HTML_HEADER             = ../../ql-doxygen/ql-header-awesome.html
+HTML_FOOTER             = ../../ql-doxygen/ql-footer-awesome.html
+HTML_STYLESHEET         =
+HTML_EXTRA_STYLESHEET   = ../../ql-doxygen/doxygen-awesome.css \
+                          ../../ql-doxygen/doxygen-awesome-sidebar-only.css \
+                          ../../ql-doxygen/doxygen-awesome-sidebar-only-darkmode-toggle.css \
+                          ../../ql-doxygen/ql-awesome.css
+HTML_EXTRA_FILES        = ../../ql-doxygen/doxygen-awesome-darkmode-toggle.js \
+                          ../../ql-doxygen/doxygen-awesome-fragment-copy-button.js \
+                          ../../ql-doxygen/doxygen-awesome-paragraph-link.js \
+                          ../../ql-doxygen/ql-preview.js
+HTML_COLORSTYLE         = AUTO_DARK
+HTML_COLORSTYLE_HUE     = 209
+HTML_COLORSTYLE_SAT     = 255
+HTML_COLORSTYLE_GAMMA   = 113
+HTML_TIMESTAMP          = NO
+HTML_DYNAMIC_MENUS      = YES
+HTML_DYNAMIC_SECTIONS   = NO
+HTML_INDEX_NUM_ENTRIES  = 100

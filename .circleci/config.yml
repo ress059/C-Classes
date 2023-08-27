@@ -26,7 +26,7 @@ jobs:
 workflows:
   build_and_test:
     jobs:
-      - build:
+      - build
       # Unit Test Job required Build job to be successful before executing.
       # - unit_test:
       #   requires:

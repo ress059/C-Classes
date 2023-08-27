@@ -1,6 +1,6 @@
-#warning "TODO: DESCRIPTION"
+#warning "TODO: DESCRIPTION AND EVERYTHING"
 /**
- * @file ir_ring_buffer_dynamic.c
+ * @file ring_buffer_dynamic.c
  * @author Ian Ress
  * @brief BY VALUE
  * @version 0.1
@@ -11,7 +11,7 @@
  */
 
 
-#include "ir_ring_buffer_dynamic.h"
+#include "ring_buffer_dynamic.h"
 #include <stdlib.h>
 #include <string.h>
 

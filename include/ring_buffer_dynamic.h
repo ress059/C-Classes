@@ -1,6 +1,6 @@
-#warning "TODO: DESCRIPTION"
+#warning "TODO: DESCRIPTION AND EVERYTHING"
 /**
- * @file ir_ring_buffer_dynamic.h
+ * @file ring_buffer_dynamic.h
  * @author Ian Ress
  * @brief BY VALUE
  * @version 0.1
@@ -11,8 +11,8 @@
  */
 
 
-#ifndef IR_RING_BUFFER_DYNAMIC_H_
-#define IR_RING_BUFFER_DYNAMIC_H_
+#ifndef RING_BUFFER_DYNAMIC_H_
+#define RING_BUFFER_DYNAMIC_H_
 
 
 #include <stdbool.h>
@@ -138,4 +138,4 @@ bool Ring_Buffer_Dynamic_Is_Full(const Ring_Buffer_Dynamic_Handle me);
 /**@}*/ // end rb_dyn
 
 
-#endif /* IR_RING_BUFFER_DYNAMIC_H_ */
+#endif /* RING_BUFFER_DYNAMIC_H_ */

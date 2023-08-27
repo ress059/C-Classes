@@ -3,7 +3,6 @@ version: 2.1
 jobs:
   build:
     # Use Docker Image for this Build Job. Go to Home Ubuntu directory once Image is opened. 
-    working_directory: ~/
     docker:
       - image: ress059/cclasses:latest
 

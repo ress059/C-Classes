@@ -1,0 +1,33 @@
+version: 2.1
+
+jobs:
+  build:
+    # Use Docker Image for this Build Job. Go to Home Ubuntu directory once Image is opened. 
+    working_directory: ~/
+    docker:
+      - image: ress059/cclasses:latest
+
+    steps:
+      - checkout
+      - run: ls -l
+
+  # Job 2
+  # unit_test:
+  #   # Use same Docket Image but now cd into Tests Directory of Repo to build and run Unit Tests.
+  #   working_directory: TODO GO INTO TESTS DIRECTORY OF REPO
+  #   docker:
+  #     - image: "TODO:"
+
+  #   steps:
+  #     - checkout
+  #     - TODO: BUILD EACH INDIVIDUAL UNIT TEST
+  #     - TODO: RUN EACH EXECTUABLE
+
+workflows:
+  build_and_test:
+    jobs:
+      - build:
+      # Unit Test Job required Build job to be successful before executing.
+      # - unit_test:
+      #   requires:
+      #     - build

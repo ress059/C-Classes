@@ -20,9 +20,9 @@ jobs:
       - run:
           name: List all files in tests/ directory for debugging.....
           command: cd ./tests && ls -l
-      -run:
+      - run:
           name: List all files in tests/builds/ directory for debugging.....
-          command: cd. /tests/builds && ls -l
+          command: cd ./tests/builds && ls -l
       - run:
           name: Run Ring Buffer Static Unit Tests
           command: cd ./tests/builds && ./test_ring_buffer_static.out

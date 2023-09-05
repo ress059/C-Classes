@@ -11,9 +11,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Go into 'tests' Directory and list all files in 'test' folder......
-          command: cd ./tests && ls -l
-      - run:
           name: Build Tests
           command: cd ./tests && make all
 
@@ -21,8 +18,14 @@ jobs:
     executor: unit-tests-executor
     steps:
       - run:
+          name: List all files in tests/ directory for debugging.....
+          command: cd ./tests && ls -l
+      -run:
+          name: List all files in tests/builds/ directory for debugging.....
+          command: cd. /tests/builds && ls -l
+      - run:
           name: Run Ring Buffer Static Unit Tests
-          command: ./tests/builds/test_ring_buffer_static.out
+          command: cd ./tests/builds && ./test_ring_buffer_static.out
 
 workflows:
   build-and-run-tests:

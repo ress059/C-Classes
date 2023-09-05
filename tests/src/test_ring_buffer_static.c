@@ -1044,6 +1044,7 @@ static void Test_Ring_Buffer_Static_Get_Number_Of_Elements_Element_Size_1(void)
    srand(time(NULL));
    uint8_t write_data[NUMBER_OF_STATIC_RING_BUFFERS];
    uint8_t read_data[NUMBER_OF_STATIC_RING_BUFFERS];
+   TEST_ASSERT_FALSE(true);
 
    /*---------------------------------------------------------------------------------------------------*/
    /*---- Generate random number of elements and random element size for all Buffers but guarantee -----*/
@@ -1093,5 +1094,6 @@ int main(void)
    RUN_TEST(Test_Ring_Buffer_Static_Read_Write);
    RUN_TEST(Test_Ring_Buffer_Static_Read_Write_Max_Number_Of_Elements);
    RUN_TEST(Test_Ring_Buffer_Static_Read_Write_Max_Element_Size);
+   RUN_TEST(Test_Ring_Buffer_Static_Get_Number_Of_Elements_Element_Size_1);
    return UNITY_END();
 }

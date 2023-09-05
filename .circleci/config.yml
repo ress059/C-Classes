@@ -6,7 +6,7 @@ executors:
       - image: ress059/cclasses:latest
 
 jobs:
-  build-tests:
+  build-and-run-unit-tests:
     executor: unit-tests-executor
     steps:
       - checkout
@@ -14,23 +14,14 @@ jobs:
           name: Build Tests
           command: cd ./tests && make all
 
-  run-tests:
-    executor: unit-tests-executor
-    steps:
-      - run:
-          name: List all files in tests/ directory for debugging.....
-          command: cd ./tests && ls -l
-      - run:
-          name: List all files in tests/builds/ directory for debugging.....
-          command: cd ./tests/builds && ls -l
       - run:
           name: Run Ring Buffer Static Unit Tests
-          command: cd ./tests/builds && ./test_ring_buffer_static.out
+          command: ./tests/builds/test_ring_buffer_static.out
 
 workflows:
-  build-and-run-tests:
+  build-and-run-unit-tests:
     jobs:
-      - build-tests
-      - run-tests:
-          requires:
-            - build-tests
+      - build-and-run-unit-tests
+      # - run-tests:
+      #     requires:
+      #       - build-tests

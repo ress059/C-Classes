@@ -11,13 +11,22 @@ jobs:
     executor: docker-executor
     steps:
       - checkout
-      - run: cd ./tests
-      - run: make all
+      - run:
+          name: Go into 'tests' Folder
+          command: cd ./tests
+      - run:
+          name: Debugging. List all files in 'tests' Folder
+          command: ls -l
+      - run:
+          name: Build Tests
+          command: make all
 
   run-tests:
     executor: docker-executor
     steps:
-      - run: ./builds/test_ring_buffer_static.out
+      - run:
+          name: Run Ring Buffer Static Unit Tests
+          command: ./builds/test_ring_buffer_static.out
 
 workflows:
   build-and-run-tests:

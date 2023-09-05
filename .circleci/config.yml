@@ -1,32 +1,38 @@
 version: 2.1
 
 executors:
-  docker-executor:
+  unit-tests-executor:
     docker:
       - image: ress059/cclasses:latest
+    working_directory: ~/project
 
 jobs:
   build-tests:
-    # Use Docker Image for this Build Job. Go to Home Ubuntu directory once Image is opened. 
-    executor: docker-executor
+    executor: unit-tests-executor
     steps:
       - checkout
       - run:
-          name: Go into 'tests' Folder
+          name: List all folders in ~/project for debugging.......
+          command: ls -l
+      - run:
+          name: Go into 'tests' Directory
           command: cd ./tests
       - run:
-          name: Debugging. List all files in 'tests' Folder
+          name: Debugging. List all files in 'tests' Folder......
           command: ls -l
       - run:
           name: Build Tests
           command: make all
 
   run-tests:
-    executor: docker-executor
+    executor: unit-tests-executor
     steps:
       - run:
+          name: Go into tests/builds/ Directory
+          command: cd ./tests/builds
+      - run:
           name: Run Ring Buffer Static Unit Tests
-          command: ./builds/test_ring_buffer_static.out
+          command: ./test_ring_buffer_static.out
 
 workflows:
   build-and-run-tests:

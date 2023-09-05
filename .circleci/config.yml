@@ -4,7 +4,6 @@ executors:
   unit-tests-executor:
     docker:
       - image: ress059/cclasses:latest
-    working_directory: ~/project
 
 jobs:
   build-tests:
@@ -12,27 +11,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: List all folders in ~/project for debugging.......
-          command: ls -l
-      - run:
-          name: Go into 'tests' Directory
-          command: cd ./tests
-      - run:
-          name: Debugging. List all files in 'tests' Folder......
-          command: ls -l
+          name: Go into 'tests' Directory and list all files in 'test' folder......
+          command: cd ./tests && ls -l
       - run:
           name: Build Tests
-          command: make all
+          command: cd ./tests && make all
 
   run-tests:
     executor: unit-tests-executor
     steps:
       - run:
-          name: Go into tests/builds/ Directory
-          command: cd ./tests/builds
-      - run:
           name: Run Ring Buffer Static Unit Tests
-          command: ./test_ring_buffer_static.out
+          command: ./tests/builds/test_ring_buffer_static.out
 
 workflows:
   build-and-run-tests:
